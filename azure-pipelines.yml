@@ -1,0 +1,18 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+Sub Test1()
+
+    Dim IE As Object
+    Set IE = CreateObject("InternetExplorer.Application")
+
+    IE.Visible = True
+    IE.navigate "http://www.google.com/"
+    
+    Do While IE.Busy
+        Application.Wait DateAdd("s", 1, Now)
+    Loop
+    
+End Sub
